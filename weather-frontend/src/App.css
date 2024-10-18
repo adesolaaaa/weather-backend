@@ -1,0 +1,62 @@
+.weather-app {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  color: white;
+}
+
+.detected-location {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);  /* Semi-transparent black background */
+  color: white;  /* White text for readability */
+  padding: 10px 20px;  /* Adds padding inside the box */
+  border-radius: 10px;  /* Rounds the corners */
+  font-size: 1rem;  /* Adjust font size */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /* Adds a subtle shadow */
+}
+
+/* Use the custom background images */
+.sunny-bg {
+  background-image: url('./images/sunny.jpg');
+}
+
+.rainy-bg {
+  background-image: url('./images/rainy.jpg');
+}
+
+.default-bg {
+  background-image: url('./images/cloudy.jpg');
+}
+.forecast-box {
+  position: absolute;
+  right: 20px;
+  top: 100px;
+  width: 200px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 10px;
+}
+
+.forecast {
+  display: flex;
+  flex-direction: column;
+}
+
+.forecast-day {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.forecast-day img {
+  width: 40px;
+  height: 40px;
+}
