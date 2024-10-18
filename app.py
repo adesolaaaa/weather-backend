@@ -8,8 +8,7 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-# Get API key from environment variables
-API_KEY = '56059bd48eef1f4d5c33e1075b8064ee'  # Your API Key
+API_KEY = '56059bd48eef1f4d5c33e1075b8064ee'  
  
 
 @app.route('/weather', methods=['GET'])
