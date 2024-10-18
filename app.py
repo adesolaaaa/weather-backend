@@ -5,7 +5,7 @@ import requests
 app = Flask(__name__)
 CORS(app)
 
-API_KEY = '56059bd48eef1f4d5c33e1075b8064ee'  # Replace with your new API key
+API_KEY = '56059bd48eef1f4d5c33e1075b8064ee'  
 
 @app.route('/weather', methods=['GET'])
 def get_weather():
@@ -14,7 +14,7 @@ def get_weather():
     lon = request.args.get('lon')
 
     if city:
-        # Fetch current weather by city
+        #current weather by city
         weather_url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric'
         print(f"Fetching weather data for city: {city}")
         response = requests.get(weather_url)

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';  // For custom styles
+import './App.css';  
 
 function App() {
-  const [city, setCity] = useState('');  // For user-entered city
+  const [city, setCity] = useState('');  //user-entered city
   const [weather, setWeather] = useState(null);  // Weather data
   const [error, setError] = useState('');  // Error message
-  const [searchHistory, setSearchHistory] = useState([]);  // City search history
+  const [searchHistory, setSearchHistory] = useState([]);  // search history
   const [detectedCity, setDetectedCity] = useState('');  // Detected city from geolocation
 
-  // Use Geolocation API to detect user's location
+  // API to detect user's location
   useEffect(() => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(async (position) => {
@@ -27,7 +27,7 @@ function App() {
       if (response.ok) {
         setWeather(data);
         setError('');
-        setSearchHistory((prev) => [...new Set([city, ...prev])].slice(0, 5));  // Keep last 5 cities
+        setSearchHistory((prev) => [...new Set([city, ...prev])].slice(0, 5));  // Keep the last 5 cities
       } else {
         setWeather(null);
         setError(data.error);
@@ -43,7 +43,7 @@ function App() {
       const data = await response.json();
       if (response.ok) {
         setWeather(data);
-        setDetectedCity(data.city);  // Set detected city name
+        setDetectedCity(data.city);  // set detected city name
         setError('');
       } else {
         setWeather(null);
@@ -79,10 +79,9 @@ function App() {
 
   return (
     <div className={`weather-app ${handleBackground()}`}>
-      {/* Always display the title */}
       <h1>Weather App</h1>
 
-      {/* Display detected location if geolocation is used */}
+      {/* to display detected location */}
       {detectedCity && (
       <p className="detected-location">Seems like you're in {detectedCity}</p>
     )}
@@ -97,7 +96,6 @@ function App() {
 
       {error && <p style={{ color: 'red' }}>{error}</p>}
 
-      {/* Always display the weather info if weather data is available */}
       {weather && (
         <div className="weather-info">
           <h2>{weather.city}</h2>
